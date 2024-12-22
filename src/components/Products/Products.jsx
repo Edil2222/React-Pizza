@@ -17,6 +17,7 @@ const Products = () => {
                 console.log(err);
 
             })
+        window.scrollTo(0,0)
     }, []);
 
 
@@ -29,7 +30,8 @@ const Products = () => {
                     ? [...new Array(6)]
                     .map((_, idx) => <ProductsSkeleton key={idx} />)
                     : products.map((products) => (
-                        <div key={products.id} className='pizza-block'>
+                        <div className="pizza-block-wrapper">
+                            <div key={products.id} className='pizza-block'>
                                 <img src={products.imageUrl} alt="" className='pizza-block__image'/>
                                 <h4>{products.title}</h4>
                                 <div className="pizza-block__selector">
@@ -63,6 +65,7 @@ const Products = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     ))
             }
 
